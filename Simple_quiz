@@ -1,0 +1,35 @@
+class question:
+    def __init__(self, prompt, answer):
+        self.prompt = prompt
+        self.answer = answer
+        
+questions_prompts = [
+    "What is the first letter of the alphabet?\n(a) c\n(b) a\n(c) b \n\n",
+    "Who is the kid from Rosario?\n(a) Lebron James\n(b) Lionel Messi\n(c) Michael Phelps \n\n",
+    "Who has 2 Golden Balls? \n(a) Lionel Messi\n(b) Some SIU guy\n(c) Leonardo DiCaprio \n\n",
+    "Who spent the most time at bench during the World Cup 2022? \n(a) Lionel Messi\n(b) Virgil Van Dijk\n(c) Cristiano Ronaldo \n\n",
+    "Who missed the last penalty against Italy in the final? \n(a) Steve Jobs\n(b) Max Fredsdal\n(c) BUKAYO SAKA \n\n",
+    "Who is the GOAT of football?\n(a) Cristiano Ronaldo\n(b) Lionel Messi\n(c) Gabriellllllle Martinellllli \n\n"
+]
+
+questions = [
+    question(questions_prompts[0], "b"),
+    question(questions_prompts[1], "b"), 
+    question(questions_prompts[2], "a"),
+    question(questions_prompts[3], "c"),
+    question(questions_prompts[4], "c"),
+    question(questions_prompts[-1], "b")
+]
+
+def run_test(questions):
+    score = 0 
+    for question in questions:
+        answer = input(question.prompt) 
+        if answer == question.answer: 
+            score += 1 
+    if str(score) == str(len(questions)): 
+        print("You got " + str(score) + "/" + str(len(questions)) + " correct!\nDu är Djuret!!!")
+    else:
+        print("You got " + str(score) + "/" + str(len(questions)) + " correct!\nDu är otroligt DELUSIONAL!!!")
+
+run_test(questions)
